@@ -26,8 +26,6 @@ def input_word(draw):
             print('Invalid input! Please try again.')
 
 
-
-
 def _validation(word, draw):
     """Validations: 1) only use letters of draw, 2) valid dictionary word"""
     if len(word) != len(set(word)):
@@ -36,10 +34,10 @@ def _validation(word, draw):
     for c in word.upper():
         if c not in draw:
             raise ValueError
-    
+
     if word.lower() not in DICTIONARY:
         raise ValueError
-    
+
     return True
 
 
@@ -87,8 +85,7 @@ def main():
 
     max_word = max_word_value(possible_words)
     max_word_score = calc_word_value(max_word)
-    print('Optimal word possible: {} (value: {})'.format(
-        max_word, max_word_score))
+    print('Optimal word possible: {} (value: {})'.format(max_word, max_word_score))
 
     game_score = word_score / max_word_score * 100
     print('You scored: {:.1f}'.format(game_score))
